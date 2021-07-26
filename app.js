@@ -310,12 +310,14 @@ const d3Tableau = () => {
 
 		function nodeColor(node) {
 			var color;
-			if (node.Case_Zone == "Calgary") color = "#6A5ACD";
-			if (node.Case_Zone == "Edmonton") color = "#CD853F";
-			if (node.Case_Zone == "Central") color = "#A52A2A";
-			if (node.Case_Zone == "Alberta Health") color = "rgb(0, 94, 133)";
-			if (node.Case_Zone == "North") color = "green";
-			if (node.Case_Zone == "South") color = "lightblue";
+			if (node.Case_Age >= 0 && node.Case_Age <= 10) color = "rgb(0, 94, 133)";
+			if (node.Case_Age >= 11 && node.Case_Age <= 20) color = "#371ce0";
+			if (node.Case_Age >= 21 && node.Case_Age <= 30) color = "#A52A2A";
+			if (node.Case_Age >= 31 && node.Case_Age <= 40)color = "#a75401";
+			if (node.Case_Age >= 41 && node.Case_Age <= 50) color = "#039243";
+			if (node.Case_Age >= 51 && node.Case_Age <= 60) color = "lightblue";
+			if (node.Case_Age >= 61 && node.Case_Age <= 70) color = "yellow";
+			if (node.Case_Age >= 71 && node.Case_Age <= 99) color = "#83288f";
 
 			return color;
 		}
@@ -331,11 +333,6 @@ const d3Tableau = () => {
 		}
 
 		function identifiedDate(node) {
-			//var months = {JAN:0,FEB:1,MAR:2,APR:3,MAY:4,JUN:5,JUL:6,AUG:7,SEP:8,OCT:9,NOV:10,DEC:11};
-			//var dd = datetext.slice(2,4);
-			//var mmm = datetext.slice(4,7);
-			//var yyyy = datetext.slice(7,11);
-			//return new Date(yyyy, months[mmm], dd);
 			if(node.Dateofdiagnosis !== '%null%')
 				{
 					return "Identified Date: " + node.Dateofdiagnosis;
@@ -348,8 +345,6 @@ const d3Tableau = () => {
 
 		function findName(node)
 		{
-			//console.log(node.Case_FirstName);
-			//console.log(node.Case_FirstName !== '%null%');
 			if(node.Case_FirstName !== '%null%')
 				{
 					return "Name: " + node.Case_FirstName + " " + node.Case_LastName;
@@ -362,7 +357,6 @@ const d3Tableau = () => {
 
 		function findAge(node)
 		{
-			console.log(node.Case_Age);
 			if(node.Case_Age !== '%null%')
 				{
 					return "Age: " + node.Case_Age;
