@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.links line {
+  stroke: rgb(8, 8, 8);
+}
+.nodes circle {
+  pointer-events: all;
+  stroke: none;
+  stroke-width: 60px;
+}
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.red {
+  background-color: #A52A2A;
+}
+.teal {
+  background-color: rgb(0, 94, 133);
+}
+.green {
+  background-color: #039243;
+}
+.seaGreen {
+  background-color: #6A5ACD;
+}
+.lightblue {
+  background-color: lightblue;
+}
+.brown {
+  background-color: #CD853F;
+}
+.text {
+  display: inline-block;
+}
+</style>
+<div><h2 style="color:rgb(0, 94, 133)">COVID-19 Contact Tracing By Zone</h2></div>
+<div><h4><span class="dot teal"></span> <span class="text">Alberta Health&emsp;</span>
+  <span class="dot seaGreen"></span> <span class="text">Calgary&emsp;</span>
+  <span class="dot red"></span> <span class="text">Central&emsp;</span>   
+  <span class="dot brown"></span> <span class="text">Edmonton&emsp;</span>
+  <span class="dot green"></span> <span class="text">North&emsp;</span>
+  <span class="dot lightblue"></span> <span class="text">South&emsp;</span>  
+</h4></div>
+<svg width="1450" height="1450"></svg>
+  <!-- Tableau script -->
+<script src="./tableau.extensions.1.4.0.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="./app.js"></script>
+<body>
+</body>
+
+</html>
