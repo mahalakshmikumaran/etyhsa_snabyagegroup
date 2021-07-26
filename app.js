@@ -310,7 +310,7 @@ const d3Tableau = () => {
 
 		function nodeColor(node) {
 			var color;
-			if (node.Case_Age >= 0 && node.Case_Age <= 10) color = "rgb(0, 94, 133)";
+			if (node.Case_Age >= 0 && node.Case_Age <= 10) color = "#f380f7";
 			if (node.Case_Age >= 11 && node.Case_Age <= 20) color = "#371ce0";
 			if (node.Case_Age >= 21 && node.Case_Age <= 30) color = "#A52A2A";
 			if (node.Case_Age >= 31 && node.Case_Age <= 40)color = "#a75401";
