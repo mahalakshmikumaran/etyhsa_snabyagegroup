@@ -364,7 +364,6 @@ const d3Tableau = () => {
 
 		function findVariant(node)
 		{
-			//console.log(node.Case_Variant);
 			if(node.Case_Variant !== '%null%')
 				{
 					return "Variant: " + node.Case_Variant;
@@ -376,7 +375,6 @@ const d3Tableau = () => {
 		}
 
 		function handleMouseOver(node) {
-			//var datevalue = dateConvert(node.Variant_Identified_Date).toDateString();
 			var htmlContent = "<div>";
 			htmlContent += "ID: " + node.ID + "<br>";
 			htmlContent += findName(node) + "<br>";
