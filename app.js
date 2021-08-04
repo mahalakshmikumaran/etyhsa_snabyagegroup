@@ -98,42 +98,33 @@ const d3Tableau = () => {
 			const [nodeDataTable, nodeSheet] = await getDataTable("node_table");
 			const nodeFields = await getNodeFields(nodeDataTable);
 
-			const [linksDataTable, linksSheet] = await getDataTable(
-				"links_table"
-			);
+			const [linksDataTable, linksSheet] = await getDataTable("links_table");
 			const linksFields = await getLinksFields(linksDataTable);
 
-			const originalLinksFields = originalFields.links;
-			console.log("originalLinksFields", originalLinksFields);
+			//updated by Ety
+			//const originalLinksFields = originalFields.links;
+			//console.log("originalLinksFields", originalLinksFields);
 
 			//Ensure all nodes that are in filtered table remain, as well as all nodes that are targets of nodes in table
 			//all nodes from filtered table = nodeFields
 			//targets = iterate over links.source[i].id, push links[i] to new array
 
 			console.log("nodeFields", nodeFields);
+			console.log("linksFields", linksFields);
 
 			const finalNodeField = [...nodeFields];
 
 			filteredLinks = [];
-
-			for (let i = 0; i < originalLinksFields.length; i++) {
+			//updated by Ety
+			for (let i = 0; i < linksFields.length; i++) {
 				if (
-					nodeFields.some(
-						(e) => e.ID === originalLinksFields[i].source
-					)
+					nodeFields.some((e) => e.ID === linksFields[i].target)
 				) {
 					filteredLinks.push({
-						source: originalLinksFields[i].source,
-						target: originalLinksFields[i].target,
+						source: linksFields[i].source,
+						target: linksFields[i].target,
 					});
-				} else {
-					// console.log(
-					// 	"not found",
-					// 	originalLinksFields[i].source.ID,
-					// 	"i",
-					// 	i
-					// );
-				}
+				} 
 			}
 
 			console.log("filteredLinks", filteredLinks);
@@ -145,7 +136,7 @@ const d3Tableau = () => {
 
 			console.log(filtered_d3_data);
 
-			d3_functions(filtered_d3_data, true, nodeSheet);
+			d3_functions(filtered_d3_data, true);//, nodeSheet);
 		}
 
 		//add Listeners
