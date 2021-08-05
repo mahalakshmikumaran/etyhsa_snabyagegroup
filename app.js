@@ -334,7 +334,7 @@ const d3Tableau = () => {
 				}
 		}
 
-		function findName(node)
+		/*function findName(node)
 		{
 			if(node.Case_FirstName !== '%null%')
 				{
@@ -344,7 +344,7 @@ const d3Tableau = () => {
 				{
 					return "Contact Name: " + node.contactFirstName + " " + node.contactLastName;
 				}
-		}
+		}*/
 
 		function findAge(node)
 		{
@@ -377,7 +377,7 @@ const d3Tableau = () => {
 		function handleMouseOver(node) {
 			var htmlContent = "<div>";
 			htmlContent += "ID: " + node.ID + "<br>";
-			htmlContent += findName(node) + "<br>";
+			//htmlContent += findName(node) + "<br>";
 			htmlContent += findAge(node) + "<br>";
 			htmlContent += "Record Type: " + recordType(node) + "<br>";
 			htmlContent += findVariant(node) + "<br>";
